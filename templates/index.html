@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ module_name }}{% endblock %}
+
+
+
+{% block main_content %}
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col breadcrumbs">
+                <ul class="list-group list-group-flush list-group-horizontal">
+                    <li class="list-group-item"><h1>{{ module_name }}</h1></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row no-gutters">
+            <div class="col tabs">
+                <div class="tab-content">
+                    {% block tab_content %}{% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

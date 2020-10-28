@@ -1,0 +1,3 @@
+{{ module_name }}: {
+  -{{ some_key }}: {{ some_value }}
+}
