@@ -24,5 +24,4 @@ class ModuleMenuSubItemView(BasePluginView, TemplateView):
         context = {
             'module_name': 'testapp45'
         }
-        print(context)
         return self.render_to_response(context)
