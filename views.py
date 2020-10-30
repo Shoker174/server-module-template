@@ -1,6 +1,8 @@
 from django.views.generic import TemplateView
+from modules_installation.views import BasePluginView
 
-class ModuleInfoView(TemplateView):
+
+class ModuleInfoView(BasePluginView, TemplateView):
     page_section = 'modules'
     template_name = 'index.html'
 
@@ -12,7 +14,8 @@ class ModuleInfoView(TemplateView):
 
         return self.render_to_response(context)
 
-class ModuleMenuSubItemView(TemplateView):
+
+class ModuleMenuSubItemView(BasePluginView, TemplateView):
     page_section = 'modules'
     template_name = 'index.html'
 
@@ -21,5 +24,5 @@ class ModuleMenuSubItemView(TemplateView):
         context = {
             'module_name': 'testapp45'
         }
-
+        print(context)
         return self.render_to_response(context)
