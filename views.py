@@ -1,4 +1,5 @@
 from django.views.generic import TemplateView
+
 from modules_installation.views import BasePluginView
 
 
@@ -9,7 +10,7 @@ class ModuleInfoView(BasePluginView, TemplateView):
     def get(self, request, *args, **kwargs):
 
         context = {
-            'module_name': 'testapp45'
+            'module_name': 'test_module'
         }
 
         return self.render_to_response(context)
@@ -22,6 +23,7 @@ class ModuleMenuSubItemView(BasePluginView, TemplateView):
     def get(self, request, *args, **kwargs):
 
         context = {
-            'module_name': 'testapp45'
+            'module_name': 'test_module'
         }
+        print(context)
         return self.render_to_response(context)
