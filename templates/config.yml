@@ -1,3 +1,7 @@
 {{ module_name }}: {
-  -{{ some_key }}: {{ some_value }}
+  -{{ global_config.some_key }}: {{ global_config.some_value }}
 }
+host_config: {% for host in configs_for_hosts %}
+  "{{ host.virtual_host }}":
+  {{ module_name }}: {
+    -{{ host.some_key }}: {{ host.some_value }}
